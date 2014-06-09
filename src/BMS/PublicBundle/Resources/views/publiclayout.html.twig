@@ -11,7 +11,11 @@
 
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+
+    {% block contact %}{% endblock %}
+
+{% endblock %}
 
 {% block javascripts %}
     <script src="{{ asset('bundles/public/js/jquery.min.js') }}"></script>

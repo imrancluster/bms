@@ -2,6 +2,6 @@ public_homepage:
     pattern:  /
     defaults: { _controller: PublicBundle:Default:index }
 
-# public_description:
-#     pattern:  /description
-#     defaults: { _controller: PublicBundle:Default:description }
+public_contact:
+     pattern:  /contact
+     defaults: { _controller: PublicBundle:Default:contact }

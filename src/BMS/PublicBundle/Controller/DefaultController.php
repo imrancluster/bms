@@ -22,10 +22,21 @@ class DefaultController extends Controller
 
     public function contactAction()
     {
-    	$data = "Contact Page";
+    	if( isset($_POST['submit']) ) {
 
-    	return $this->render('PublicBundle:Default:contact.html.twig', array(
-    		'contact' => $data
-    	));
+            return $this->redirect($this->generateUrl("public_homepage"));
+
+        } else {
+
+            $data = "Contact Page";
+
+            return $this->render('PublicBundle:Default:contact.html.twig', array(
+                'contact' => $data
+            ));
+
+        }
+
     }
+
+
 }

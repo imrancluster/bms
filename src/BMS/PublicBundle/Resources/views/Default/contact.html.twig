@@ -1,1 +1,35 @@
-<h2>{{ contact }}</h2>
+<section id="contact" name="contact"></section>
+<div id="footerwrap">
+    <div class="container">
+        <div class="col-lg-5">
+            <h3>Address</h3>
+            <p>
+                L.13, H#17,<br/>
+                South Banasree,<br/>
+                Khilgone<br/>
+                Dhaka-1219
+            </p>
+        </div>
+
+        <div class="col-lg-7">
+            <h3>Feel Free Contact Us</h3>
+            <br>
+            <form role="form" action="{{ path('public_contact') }}" method="post" enctype="plain">
+                <div class="form-group">
+                    <label for="name1">Your Name</label>
+                    <input type="text" name="name" class="form-control" id="name1" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label>Your Text</label>
+                    <textarea class="form-control" name="message" rows="3"></textarea>
+                </div>
+                <br>
+                <input type="submit" name="submit" class="btn btn-large btn-success" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+</div>
