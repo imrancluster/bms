@@ -24,6 +24,8 @@ class DefaultController extends Controller
     {
     	if( isset($_POST['submit']) ) {
 
+            $this->get('session')->getFlashBag()->add('notice', 'Hello Mr./Mrs. '. $_POST['name'] .', your feedback successfully submitted!!!' );
+
             return $this->redirect($this->generateUrl("public_homepage"));
 
         } else {
