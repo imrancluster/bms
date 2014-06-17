@@ -8,6 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+
         return $this->render('PublicBundle:Default:index.html.twig');
     }
 
@@ -22,7 +23,24 @@ class DefaultController extends Controller
 
     public function contactAction()
     {
-    	if( isset($_POST['submit']) ) {
+    	// echo "<pre>"; print_r($_POST);die;
+        if( isset($_POST['submit']) ) {
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('BMS Feedback')
+                ->setFrom('imrancluster@gmail.com')
+                ->setTo($_POST['email'])
+                ->setBody(
+                    $this->renderView(
+                        'PublicBundle:Default:contactemail.html.twig', array(
+                            'message'   => $_POST['message'],
+                            'name'      => $_POST['name']      
+                        ))
+                    )
+                ;
+                $message->setContentType("text/html");
+
+            $this->get('mailer')->send($message);
 
             $this->get('session')->getFlashBag()->add('notice', 'Hello Mr./Mrs. '. $_POST['name'] .', your feedback successfully submitted!!!' );
 
@@ -38,6 +56,16 @@ class DefaultController extends Controller
 
         }
 
+    }
+
+    public function dashboardAction()
+    {
+        $data = "Dasboard Page";
+
+        return $this->render('PublicBundle:Default:dashboard.html.twig', array(
+            'data'  => $data,
+            'title' => "Dashbaord"
+        ));
     }
 
 

@@ -2,15 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="BMS - Building Management System">
-        <meta name="author" content="pydream.com">
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body data-spy="scroll" data-offset="0" data-target="#navigation">
+    <body>
+        {% if app.session.flashBag.has('success') %}
+            <div class="alert-message success">
+                {% for msg in app.session.flashBag.get('success') %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -5,3 +5,7 @@ public_homepage:
 public_contact:
      pattern:  /contact
      defaults: { _controller: PublicBundle:Default:contact }
+
+public_dashboard:
+     pattern:  /dashboard
+     defaults: { _controller: PublicBundle:Default:dashboard }

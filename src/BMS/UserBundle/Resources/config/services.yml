@@ -1,0 +1,8 @@
+services:
+   bms_user.listener.user_listener:
+       class: BMS\UserBundle\Listener\UserListener
+       arguments:
+           - "@security.encoder_factory"
+       tags: 
+           - { name: doctrine.event_listener, event: prePersist }
+           - { name: doctrine.event_listener, event: preUpdate }

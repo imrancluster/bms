@@ -1,0 +1,39 @@
+{% extends 'UserBundle::layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body -%}
+
+<div class="container marketing">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1>FFEx</h1>
+        <p class="lead">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy
+            text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged
+        </p>
+        <p>
+            <a class="btn btn-lg btn-success" href="#" role="button">Dashbaord!</a>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a class="btn btn-lg btn-success" href="{{ path('logout') }}" role="button">Logout 
+                 ( {{ app.user.username }} ) </a>
+            {% else %}
+                    <a class="btn btn-lg btn-success" href="{{ path('login') }}" role="button">Login</a>
+            {% endif %}
+        </p>
+    </div>
+</div>
+<div class="container">
+    
+</div>
+
+
+
+
+
+    {% endblock %}
