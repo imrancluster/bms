@@ -23,18 +23,18 @@ class DefaultController extends Controller
 
     public function contactAction()
     {
-    	// echo "<pre>"; print_r($_POST);die;
         if( isset($_POST['submit']) ) {
 
             $message = \Swift_Message::newInstance()
                 ->setSubject('BMS Feedback')
-                ->setFrom('imrancluster@gmail.com')
-                ->setTo($_POST['email'])
+                ->setFrom('noreply@pydream.com')
+                ->setTo('imrancluster@gmail.com')
                 ->setBody(
                     $this->renderView(
                         'PublicBundle:Default:contactemail.html.twig', array(
                             'message'   => $_POST['message'],
-                            'name'      => $_POST['name']      
+                            'name'      => $_POST['name'],
+                            'email'     => $_POST['name']
                         ))
                     )
                 ;
