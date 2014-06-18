@@ -10,3 +10,6 @@
 /bin/
 /composer.phar
 .idea/*
+.idea/bms.iml
+.idea/workspace.xml
+web/.htaccess

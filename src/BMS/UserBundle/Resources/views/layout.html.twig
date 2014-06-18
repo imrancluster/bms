@@ -1,12 +1,8 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-    {% stylesheets
-        '@UserBundle/Resources/public/css/bootstrap.css'
-        '@UserBundle/Resources/public/css/login.css'
-    %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
+    <link href="{{ asset('bundles/user/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/user/css/login.css') }}" rel="stylesheet">
 {% endblock %}
 
 {#{% block title 'Login!' %}#}
@@ -14,11 +10,6 @@
 
 
 {% block javascripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    {#<script src="{{ asset('bundles/event/js/bootstrap.min.js') }}"></script>#}
-    {% javascripts
-        '@UserBundle/Resources/public/js/bootstrap.min.js'
-    %}
-        <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
+    <script src="{{ asset('bundles/public/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/user/js/bootstrap.min.js') }}"></script>
 {% endblock %}
